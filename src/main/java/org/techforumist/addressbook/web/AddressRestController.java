@@ -32,7 +32,6 @@ public class AddressRestController {
 		} else {
 			return new ResponseEntity<Address>(address, HttpStatus.OK);
 		}
-
 	}
 
 	@RequestMapping(value = "/address/{id}", method = RequestMethod.DELETE)
@@ -44,7 +43,6 @@ public class AddressRestController {
 			addressRepository.delete(address);
 			return new ResponseEntity<Address>(address, HttpStatus.OK);
 		}
-
 	}
 
 	@RequestMapping(value = "/address", method = RequestMethod.POST)
@@ -56,5 +54,4 @@ public class AddressRestController {
 	public Address updateAddress(@RequestBody Address address) {
 		return addressRepository.save(address);
 	}
-
 }
