@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="address")
+@Table(name="user_log")
 public class AddressModels {
 
 	@Id
