@@ -14,7 +14,7 @@ import com.app.crud.models.UserModels;
 import com.app.crud.repository.UserRepository;
 
 @RestController
-public class HomeRestController {
+public class GeneralController {
 	@Autowired
 	private UserRepository userRepository;
 
