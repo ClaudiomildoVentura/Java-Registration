@@ -32,8 +32,8 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
 		super.configure(web);
 	}
 
-	// This method is used for override HttpSecurity of the web Application.
-	// We can specify our authorization criteria inside this method.
+	// Este método é usado para substituir HttpSecurity do aplicativo da web.
+	// Podemos especificar nossos critérios de autorização dentro deste método.
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
