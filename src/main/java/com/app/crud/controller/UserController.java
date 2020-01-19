@@ -19,7 +19,7 @@ import com.app.crud.repository.UserRepository;
 
 @RestController
 @RequestMapping(value = "/api")
-public class AppUserRestController {
+public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 
