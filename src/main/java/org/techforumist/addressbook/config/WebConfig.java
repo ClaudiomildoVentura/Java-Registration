@@ -11,15 +11,15 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 
 @Configurable
 @EnableWebSecurity
-// Modifying or overriding the default spring boot security.
+// Modificando ou substituindo a segurança padrão da inicialização do SpringBoot.
 public class WebConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	AppUserDetailsService appUserDetailsService;
 
-	// This method is for overriding the default AuthenticationManagerBuilder.
-	// We can specify how the user details are kept in the application. It may
-	// be in a database, LDAP or in memory.
+	// Este método é para substituir o AuthenticationManagerBuilder padrão.
+	// Podemos especificar como os detalhes do usuário são mantidos no aplicativo.
+	// Pode estar em um banco de dados, LDAP ou na memória.
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(appUserDetailsService);
