@@ -16,14 +16,14 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 public class WebConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	AppUserDetailsService appUserDetailsService;
+	UserConfig userConfig;
 
 	// Este método é para substituir o AuthenticationManagerBuilder padrão.
 	// Podemos especificar como os detalhes do usuário são mantidos no aplicativo.
 	// Pode estar em um banco de dados, LDAP ou na memória.
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(appUserDetailsService);
+		auth.userDetailsService(userConfig);
 	}
 
 	// Este método é para substituir algumas configurações do WebSecurity

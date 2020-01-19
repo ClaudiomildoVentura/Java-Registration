@@ -10,7 +10,7 @@ import com.app.crud.domain.AppUser;
 import com.app.crud.repository.AppUserRepository;
 
 @Service
-public class AppUserDetailsService implements UserDetailsService {
+public class UserConfig implements UserDetailsService {
 
 	@Autowired
 	AppUserRepository appUserRepository;
