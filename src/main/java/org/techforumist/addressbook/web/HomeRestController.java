@@ -12,10 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.techforumist.addressbook.domain.AppUser;
 import org.techforumist.addressbook.repository.AppUserRepository;
 
-/**
- * @author Sarath Muraleedharan
- *
- */
 @RestController
 public class HomeRestController {
 	@Autowired
