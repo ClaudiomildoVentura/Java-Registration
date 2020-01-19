@@ -47,7 +47,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
 				// habilitando a autenticação básica
 				.httpBasic().and()
 				// configurando a sessão como menos estado. O que significa que existe
-				// no session in the server
+				// nenhuma sessão no servidor
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 				// disabling the CSRF - Cross Site Request Forgery
 				.csrf().disable();
