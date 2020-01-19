@@ -72,5 +72,4 @@ public class AppUserRestController {
 		}
 		return appUserRepository.save(appUser);
 	}
-
 }
