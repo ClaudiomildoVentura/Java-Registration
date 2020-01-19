@@ -37,7 +37,7 @@ public class UserModels implements UserDetails {
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
-	private List<Address> addresses;
+	private List<AddressModels> addresses;
 
 	public Long getId() {
 		return id;
@@ -79,11 +79,11 @@ public class UserModels implements UserDetails {
 		this.role = role;
 	}
 
-	public List<Address> getAddresses() {
+	public List<AddressModels> getAddresses() {
 		return addresses;
 	}
 
-	public void setAddresses(List<Address> addresses) {
+	public void setAddresses(List<AddressModels> addresses) {
 		this.addresses = addresses;
 	}
 

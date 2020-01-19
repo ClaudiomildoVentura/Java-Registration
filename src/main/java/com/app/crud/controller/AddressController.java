@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.crud.models.Address;
+import com.app.crud.models.AddressModels;
 import com.app.crud.repository.AddressRepository;
 
 @RestController
@@ -21,38 +21,38 @@ public class AddressController {
 	private AddressRepository addressRepository;
 
 	@RequestMapping(value = "/address", method = RequestMethod.GET)
-	public List<Address> address() {
+	public List<AddressModels> addressModels() {
 		return addressRepository.findAll();
 	}
 
 	@RequestMapping(value = "/address/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Address> addressById(@PathVariable Long id) {
-		Address address = addressRepository.findOne(id);
-		if (address == null) {
-			return new ResponseEntity<Address>(HttpStatus.NO_CONTENT);
+	public ResponseEntity<AddressModels> addressById(@PathVariable Long id) {
+		AddressModels addressModels = addressRepository.findOne(id);
+		if (addressModels == null) {
+			return new ResponseEntity<AddressModels>(HttpStatus.NO_CONTENT);
 		} else {
-			return new ResponseEntity<Address>(address, HttpStatus.OK);
+			return new ResponseEntity<AddressModels>(addressModels, HttpStatus.OK);
 		}
 	}
 
 	@RequestMapping(value = "/address/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Address> deleteAddress(@PathVariable Long id) {
-		Address address = addressRepository.findOne(id);
-		if (address == null) {
-			return new ResponseEntity<Address>(HttpStatus.NO_CONTENT);
+	public ResponseEntity<AddressModels> deleteAddress(@PathVariable Long id) {
+		AddressModels addressModels = addressRepository.findOne(id);
+		if (addressModels == null) {
+			return new ResponseEntity<AddressModels>(HttpStatus.NO_CONTENT);
 		} else {
-			addressRepository.delete(address);
-			return new ResponseEntity<Address>(address, HttpStatus.OK);
+			addressRepository.delete(addressModels);
+			return new ResponseEntity<AddressModels>(addressModels, HttpStatus.OK);
 		}
 	}
 
 	@RequestMapping(value = "/address", method = RequestMethod.POST)
-	public ResponseEntity<Address> createAddress(@RequestBody Address address) {
-		return new ResponseEntity<Address>(addressRepository.save(address), HttpStatus.CREATED);
+	public ResponseEntity<AddressModels> createAddress(@RequestBody AddressModels addressModels) {
+		return new ResponseEntity<AddressModels>(addressRepository.save(addressModels), HttpStatus.CREATED);
 	}
 
 	@RequestMapping(value = "/address", method = RequestMethod.PUT)
-	public Address updateAddress(@RequestBody Address address) {
-		return addressRepository.save(address);
+	public AddressModels updateAddress(@RequestBody AddressModels addressModels) {
+		return addressRepository.save(addressModels);
 	}
 }
