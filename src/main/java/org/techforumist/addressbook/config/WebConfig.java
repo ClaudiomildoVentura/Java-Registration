@@ -11,7 +11,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 
 @Configurable
 @EnableWebSecurity
-// Modificando ou substituindo a segurança padrão da inicialização do SpringBoot.
+// Modificando ou substituindo a segurança padrão da inicialização do
+// SpringBoot.
 public class WebConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
@@ -37,10 +38,9 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
-		        // começa a autorizar configurações
-				.authorizeRequests() 
-				// ignorando o "/", "/index.html", "/app/**", "/register",
-				// "/favicon.ico"
+				// começa a autorizar configurações
+				.authorizeRequests()
+				// ignorando o "/", "/index.html", "/app/**", "/register", "/favicon.ico"
 				.antMatchers("/", "/index.html", "/app/**", "/register", "/favicon.ico").permitAll()
 				// autenticação de todos os URLS restantes
 				.anyRequest().fullyAuthenticated().and()
