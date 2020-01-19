@@ -49,7 +49,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
 				// configurando a sessão como menos estado. O que significa que existe
 				// nenhuma sessão no servidor
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-				// disabling the CSRF - Cross Site Request Forgery
+				// desativando o CSRF - falsificação de solicitação entre sites
 				.csrf().disable();
 	}
 }
