@@ -37,12 +37,12 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
-				// starts authorizing configurations
-				.authorizeRequests()
+		        // começa a autorizar configurações
+				.authorizeRequests() 
 				// ignoring the "/", "/index.html", "/app/**", "/register",
 				// "/favicon.ico"
 				.antMatchers("/", "/index.html", "/app/**", "/register", "/favicon.ico").permitAll()
-				// authenticate all remaining URLS
+				// autenticação de todos os URLS restantes
 				.anyRequest().fullyAuthenticated().and()
 				// enabling the basic authentication
 				.httpBasic().and()
