@@ -39,7 +39,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
 		http
 		        // começa a autorizar configurações
 				.authorizeRequests() 
-				// ignoring the "/", "/index.html", "/app/**", "/register",
+				// ignorando o "/", "/index.html", "/app/**", "/register",
 				// "/favicon.ico"
 				.antMatchers("/", "/index.html", "/app/**", "/register", "/favicon.ico").permitAll()
 				// autenticação de todos os URLS restantes
