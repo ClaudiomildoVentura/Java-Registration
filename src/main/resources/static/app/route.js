@@ -1,4 +1,4 @@
-angular.module('AddressBook').config(function($stateProvider, $urlRouterProvider) {
+angular.module('AppAngularService').config(function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise('/page-not-found');
 	$stateProvider.state('nav', {
 		abstract : true,

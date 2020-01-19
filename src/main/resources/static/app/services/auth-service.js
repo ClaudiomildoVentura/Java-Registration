@@ -1,4 +1,4 @@
-angular.module('AddressBook')
+angular.module('AppAngularService')
 	// Creating the Angular Service for storing logged user details
 	.service('AuthService', function () {
 		return {

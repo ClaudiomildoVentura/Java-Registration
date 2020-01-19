@@ -1,4 +1,4 @@
-angular.module('AddressBook')
+angular.module('AppAngularService')
 	// Creating the Angular Controller
 	.controller('LoginController', function ($http, $scope, $state, AuthService, $rootScope) {
 

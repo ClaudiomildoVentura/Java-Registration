@@ -1,4 +1,4 @@
-angular.module('AddressBook')
+angular.module('AppAngularService')
 	// Creating the Angular Controller
 	.controller('AddressController', function ($http, $scope, AuthService) {
 		var edit = false;
