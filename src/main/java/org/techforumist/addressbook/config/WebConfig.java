@@ -44,9 +44,9 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/", "/index.html", "/app/**", "/register", "/favicon.ico").permitAll()
 				// autenticação de todos os URLS restantes
 				.anyRequest().fullyAuthenticated().and()
-				// enabling the basic authentication
+				// habilitando a autenticação básica
 				.httpBasic().and()
-				// configuring the session as state less. Which means there is
+				// configurando a sessão como menos estado. O que significa que existe
 				// no session in the server
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 				// disabling the CSRF - Cross Site Request Forgery
