@@ -25,9 +25,8 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
 		auth.userDetailsService(appUserDetailsService);
 	}
 
-	// This method is for overriding some configuration of the WebSecurity
-	// If you want to ignore some request or request patterns then you can
-	// specify that inside this method
+	// Este método é para substituir algumas configurações do WebSecurity
+	// Se você deseja ignorar algumas solicitações ou padrões de solicitações.
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		super.configure(web);
