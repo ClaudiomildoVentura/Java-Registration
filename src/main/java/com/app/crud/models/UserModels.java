@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 @Entity
-@Table(name="app_user")
+@Table(name="user")
 public class UserModels implements UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
