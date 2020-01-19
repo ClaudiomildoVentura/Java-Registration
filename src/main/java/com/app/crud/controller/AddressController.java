@@ -16,7 +16,7 @@ import com.app.crud.repository.AddressRepository;
 
 @RestController
 @RequestMapping(value = "/api")
-public class AddressRestController {
+public class AddressController {
 	@Autowired
 	private AddressRepository addressRepository;
 
