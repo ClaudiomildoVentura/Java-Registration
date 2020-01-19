@@ -9,10 +9,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 
-/**
- * @author Sarath Muraleedharan
- *
- */
 @Configurable
 @EnableWebSecurity
 // Modifying or overriding the default spring boot security.
@@ -57,5 +53,4 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
 				// disabling the CSRF - Cross Site Request Forgery
 				.csrf().disable();
 	}
-
 }
