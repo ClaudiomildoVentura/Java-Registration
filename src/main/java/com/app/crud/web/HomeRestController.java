@@ -11,20 +11,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.crud.models.UserModels;
-import com.app.crud.repository.AppUserRepository;
+import com.app.crud.repository.UserRepository;
 
 @RestController
 public class HomeRestController {
 	@Autowired
-	private AppUserRepository appUserRepository;
+	private UserRepository userRepository;
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<UserModels> createUser(@RequestBody UserModels userModels) {
-		if (appUserRepository.findOneByUsername(userModels.getUsername()) != null) {
+		if (userRepository.findOneByUsername(userModels.getUsername()) != null) {
 			throw new RuntimeException("Username already exist");
 		}
 		userModels.setRole("USER");
-		return new ResponseEntity<UserModels>(appUserRepository.save(userModels), HttpStatus.CREATED);
+		return new ResponseEntity<UserModels>(userRepository.save(userModels), HttpStatus.CREATED);
 	}
 
 	@RequestMapping("/user")

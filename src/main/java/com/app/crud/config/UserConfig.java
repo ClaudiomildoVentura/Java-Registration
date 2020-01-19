@@ -7,17 +7,17 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.app.crud.models.UserModels;
-import com.app.crud.repository.AppUserRepository;
+import com.app.crud.repository.UserRepository;
 
 @Service
 public class UserConfig implements UserDetailsService {
 
 	@Autowired
-	AppUserRepository appUserRepository;
+	UserRepository userRepository;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		UserModels userModels = appUserRepository.findOneByUsername(username);
+		UserModels userModels = userRepository.findOneByUsername(username);
 		return userModels;
 	}
 }

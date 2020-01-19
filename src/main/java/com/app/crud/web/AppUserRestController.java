@@ -15,23 +15,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.crud.models.UserModels;
-import com.app.crud.repository.AppUserRepository;
+import com.app.crud.repository.UserRepository;
 
 @RestController
 @RequestMapping(value = "/api")
 public class AppUserRestController {
 	@Autowired
-	private AppUserRepository appUserRepository;
+	private UserRepository userRepository;
 
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	public List<UserModels> userModels() {
-		return appUserRepository.findAll();
+		return userRepository.findAll();
 	}
 
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
 	public ResponseEntity<UserModels> userById(@PathVariable Long id) {
-		UserModels userModels = appUserRepository.findOne(id);
+		UserModels userModels = userRepository.findOne(id);
 		if (userModels == null) {
 			return new ResponseEntity<UserModels>(HttpStatus.NO_CONTENT);
 		} else {
@@ -41,7 +41,7 @@ public class AppUserRestController {
 
 	@RequestMapping(value = "/users/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<UserModels> deleteUser(@PathVariable Long id) {
-		UserModels userModels = appUserRepository.findOne(id);
+		UserModels userModels = userRepository.findOne(id);
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String loggedUsername = auth.getName();
 		if (userModels == null) {
@@ -49,7 +49,7 @@ public class AppUserRestController {
 		} else if (userModels.getUsername().equalsIgnoreCase(loggedUsername)) {
 			throw new RuntimeException("You cannot delete your account");
 		} else {
-			appUserRepository.delete(userModels);
+			userRepository.delete(userModels);
 			return new ResponseEntity<UserModels>(userModels, HttpStatus.OK);
 		}
 
@@ -58,19 +58,19 @@ public class AppUserRestController {
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/users", method = RequestMethod.POST)
 	public ResponseEntity<UserModels> createUser(@RequestBody UserModels userModels) {
-		if (appUserRepository.findOneByUsername(userModels.getUsername()) != null) {
+		if (userRepository.findOneByUsername(userModels.getUsername()) != null) {
 			throw new RuntimeException("Username already exist");
 		}
-		return new ResponseEntity<UserModels>(appUserRepository.save(userModels), HttpStatus.CREATED);
+		return new ResponseEntity<UserModels>(userRepository.save(userModels), HttpStatus.CREATED);
 	}
 
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/users", method = RequestMethod.PUT)
 	public UserModels updateUser(@RequestBody UserModels userModels) {
-		if (appUserRepository.findOneByUsername(userModels.getUsername()) != null
-				&& appUserRepository.findOneByUsername(userModels.getUsername()).getId() != userModels.getId()) {
+		if (userRepository.findOneByUsername(userModels.getUsername()) != null
+				&& userRepository.findOneByUsername(userModels.getUsername()).getId() != userModels.getId()) {
 			throw new RuntimeException("Username already exist");
 		}
-		return appUserRepository.save(userModels);
+		return userRepository.save(userModels);
 	}
 }
