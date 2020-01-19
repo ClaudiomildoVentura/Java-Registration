@@ -1,4 +1,4 @@
-package com.app.crud.domain;
+package com.app.crud.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.crud.domain.Address;
+import com.app.crud.models.Address;
 import com.app.crud.repository.AddressRepository;
 
 @RestController

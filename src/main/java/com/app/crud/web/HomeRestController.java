@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.crud.domain.AppUser;
+import com.app.crud.models.AppUser;
 import com.app.crud.repository.AppUserRepository;
 
 @RestController
