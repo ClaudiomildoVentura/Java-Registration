@@ -1,4 +1,4 @@
-package org.techforumist.addressbook.web;
+package com.techforumist.addressbook.web;
 
 import java.util.List;
 
@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.techforumist.addressbook.domain.Address;
-import org.techforumist.addressbook.repository.AddressRepository;
+
+import com.techforumist.addressbook.domain.Address;
+import com.techforumist.addressbook.repository.AddressRepository;
 
 @RestController
 @RequestMapping(value = "/api")

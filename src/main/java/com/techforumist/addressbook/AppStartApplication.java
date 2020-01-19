@@ -1,12 +1,12 @@
-package org.techforumist.addressbook;
+package com.techforumist.addressbook;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AddressBookSpringBootSecurityAngularjsApplication {
+public class AppStartApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AddressBookSpringBootSecurityAngularjsApplication.class, args);
+		SpringApplication.run(AppStartApplication.class, args);
 	}
 }
