@@ -67,5 +67,4 @@ angular.module('AddressBook')
 		}
 	};
 	init();
-
 });
