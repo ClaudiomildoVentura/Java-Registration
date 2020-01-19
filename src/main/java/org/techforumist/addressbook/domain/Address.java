@@ -51,5 +51,4 @@ public class Address {
 	public void setOwner(AppUser owner) {
 		this.owner = owner;
 	}
-
 }
