@@ -27,7 +27,7 @@ angular.module('AppAngularService')
 					$scope.message = 'Authetication Failed !';
 				}
 			}).error(function (error) {
-				$scope.message = 'Authetication Failed !';
+				$scope.message = 'Username ou senha incorretos !';
 			});
 		};
 	});
