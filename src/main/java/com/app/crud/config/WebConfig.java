@@ -1,4 +1,4 @@
-package com.techforumist.addressbook.config;
+package com.app.crud.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;

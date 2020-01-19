@@ -1,4 +1,4 @@
-package com.techforumist.addressbook.web;
+package com.app.crud.web;
 
 import java.security.Principal;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.techforumist.addressbook.domain.AppUser;
-import com.techforumist.addressbook.repository.AppUserRepository;
+import com.app.crud.domain.AppUser;
+import com.app.crud.repository.AppUserRepository;
 
 @RestController
 public class HomeRestController {

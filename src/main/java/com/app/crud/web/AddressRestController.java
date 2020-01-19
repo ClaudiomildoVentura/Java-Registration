@@ -1,4 +1,4 @@
-package com.techforumist.addressbook.web;
+package com.app.crud.web;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.techforumist.addressbook.domain.Address;
-import com.techforumist.addressbook.repository.AddressRepository;
+import com.app.crud.domain.Address;
+import com.app.crud.repository.AddressRepository;
 
 @RestController
 @RequestMapping(value = "/api")

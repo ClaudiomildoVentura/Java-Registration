@@ -1,4 +1,4 @@
-package com.techforumist.addressbook.domain;
+package com.app.crud.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

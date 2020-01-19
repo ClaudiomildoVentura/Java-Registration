@@ -1,4 +1,4 @@
-package com.techforumist.addressbook.domain;
+package com.app.crud.domain;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -1,8 +1,8 @@
-package com.techforumist.addressbook.repository;
+package com.app.crud.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.techforumist.addressbook.domain.AppUser;
+import com.app.crud.domain.AppUser;
 
 public interface AppUserRepository extends JpaRepository<AppUser, Long> {
 	public AppUser findOneByUsername(String username);

@@ -1,7 +1,7 @@
-package com.techforumist.addressbook.repository;
+package com.app.crud.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.techforumist.addressbook.domain.Address;
+import com.app.crud.domain.Address;
 
 public interface AddressRepository extends JpaRepository<Address, Long> {}
