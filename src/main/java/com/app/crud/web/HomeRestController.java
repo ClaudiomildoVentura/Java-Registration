@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.crud.models.AppUser;
+import com.app.crud.models.UserModels;
 import com.app.crud.repository.AppUserRepository;
 
 @RestController
@@ -19,12 +19,12 @@ public class HomeRestController {
 	private AppUserRepository appUserRepository;
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public ResponseEntity<AppUser> createUser(@RequestBody AppUser appUser) {
-		if (appUserRepository.findOneByUsername(appUser.getUsername()) != null) {
+	public ResponseEntity<UserModels> createUser(@RequestBody UserModels userModels) {
+		if (appUserRepository.findOneByUsername(userModels.getUsername()) != null) {
 			throw new RuntimeException("Username already exist");
 		}
-		appUser.setRole("USER");
-		return new ResponseEntity<AppUser>(appUserRepository.save(appUser), HttpStatus.CREATED);
+		userModels.setRole("USER");
+		return new ResponseEntity<UserModels>(appUserRepository.save(userModels), HttpStatus.CREATED);
 	}
 
 	@RequestMapping("/user")

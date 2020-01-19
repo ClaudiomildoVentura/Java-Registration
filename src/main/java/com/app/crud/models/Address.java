@@ -18,7 +18,7 @@ public class Address {
 
 	@ManyToOne
 	@JoinColumn(name = "owner")
-	private AppUser owner;
+	private UserModels owner;
 
 	public Long getId() {
 		return id;
@@ -44,11 +44,11 @@ public class Address {
 		this.address = address;
 	}
 
-	public AppUser getOwner() {
+	public UserModels getOwner() {
 		return owner;
 	}
 
-	public void setOwner(AppUser owner) {
+	public void setOwner(UserModels owner) {
 		this.owner = owner;
 	}
 }
