@@ -1,4 +1,4 @@
-package com.app.crud.config;
+package com.app.crud.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -12,17 +12,17 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 //Modificando ou substituindo a segurança padrão da inicialização do SpringBoot
 @Configurable
 @EnableWebSecurity
-public class WebConfig extends WebSecurityConfigurerAdapter {
+public class AppService extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	UserConfig userConfig;
+	UserService userService;
 
 	// Este método é para substituir o AuthenticationManagerBuilder padrão.
 	// Podemos especificar como os detalhes do usuário são mantidos no aplicativo.
 	// Pode estar em um banco de dados, LDAP ou na memória.
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userConfig);
+		auth.userDetailsService(userService);
 	}
 
 	// Este método é para substituir algumas configurações do WebSecurity

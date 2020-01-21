@@ -1,4 +1,4 @@
-package com.app.crud.config;
+package com.app.crud.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,7 +10,7 @@ import com.app.crud.models.UserModels;
 import com.app.crud.repository.UserRepository;
 
 @Service
-public class UserConfig implements UserDetailsService {
+public class UserService implements UserDetailsService {
 
 	@Autowired
 	UserRepository userRepository;
