@@ -9,10 +9,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 
+//Modificando ou substituindo a segurança padrão da inicialização do SpringBoot
 @Configurable
 @EnableWebSecurity
-// Modificando ou substituindo a segurança padrão da inicialização do
-// SpringBoot.
 public class WebConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
