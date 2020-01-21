@@ -1,5 +1,6 @@
 package com.app.crud.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,13 +10,17 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="user_log")
+@Table(name="address")
 public class AddressModels {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	@Column( name ="address_name",  nullable = true)
 	private String name;
+	
+	@Column( name ="address",  nullable = true)
 	private String address;
 
 	@ManyToOne
