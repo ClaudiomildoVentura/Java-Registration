@@ -24,15 +24,22 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 @Entity
 @Table(name="user")
 public class UserModels implements UserDetails {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column( name ="id_user",  nullable = true)
 	private Long id;
+	
+	@Column(name = "name_user", nullable = true)
 	private String name;
 
-	@Column(unique = true)
+	@Column( name ="user_name",  unique = true, nullable = true)
 	private String username;
+	
 	@JsonProperty(access = Access.WRITE_ONLY)
 	private String password;
+	
+	@Column( name ="role",  nullable = true)
 	private String role;
 
 	@JsonIgnore
