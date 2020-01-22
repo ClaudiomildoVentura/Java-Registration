@@ -25,6 +25,8 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 @Table(name="user")
 public class UserModels implements UserDetails {
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column( name ="id_user",  nullable = true)
